@@ -1,17 +1,18 @@
-function createTask(name) {
-  // Create a new task
-  var task = {
-    name: name,
-    message: "Happy Ramadan!"
-  };
+document.addEventListener("DOMContentLoaded", function () {
+    const cardForm = document.getElementById("cardForm");
+    const nameInput = document.getElementById("name");
+    const card = document.getElementById("card");
+    const cardName = document.getElementById("cardName");
 
-  // Save the task
-  $.ajax({
-    url: "createTask.php",
-    data: task,
-    type: "post",
-    success: function(response) {
-      console.log(response);
-    }
-  });
-}
+    cardForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = nameInput.value.trim();
+        if (name) {
+            cardName.textContent = name;
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+    });
+});
+

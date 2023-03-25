@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ramadan Congratulation Task</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Congratulation Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Ramadan Congratulation Task</h1>
-<form action="createTask.php" method="post">
-  <input type="text" name="name" placeholder="Enter your name">
-  <input type="submit" value="Create Task">
-</form>
+    <header>
+        <h1>Ramadan Congratulation Card Generator</h1>
+    </header>
+    <main>
+        <form id="cardForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <button type="submit">Generate Card</button>
+        </form>
+        <div id="card" class="hidden">
+            <div id="cardContent">
+                <h2>Ramadan Mubarak!</h2>
+                <p>From,</p>
+                <p id="cardName"></p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
+
